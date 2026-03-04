@@ -33,7 +33,7 @@ RUN . "$NVM_DIR/nvm.sh" && npm install -g @anthropic-ai/claude-code
 RUN echo 'alias clauded="claude --dangerously-skip-permissions"' >> ~/.bashrc
 
 # Set up working directory
-WORKDIR /workspace
+WORKDIR /home/ubuntu/Workspace
 
 # Default command - keep container running
 CMD ["bash"]

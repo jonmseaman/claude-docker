@@ -9,7 +9,7 @@ build:
 run:
 	docker run -d \
 		--name $(DOCKER_CONTAINER_NAME) \
-		-v $(PWD)/workspace:/workspace \
+		-v ~/Workspace:/home/ubuntu/Workspace \
 		-it \
 		$(DOCKER_IMAGE_NAME)
 	@echo "Container started. Use 'make shell' to access it"
@@ -30,4 +30,5 @@ logs:
 	docker logs -f $(DOCKER_CONTAINER_NAME)
 
 status:
+	docker context show
 	@docker ps -a --filter name=$(DOCKER_CONTAINER_NAME)
