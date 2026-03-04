@@ -19,7 +19,7 @@ stop:
 	docker rm $(DOCKER_CONTAINER_NAME) || true
 
 shell:
-	docker exec -it $(DOCKER_CONTAINER_NAME) bash
+	docker exec -it -u ubuntu $(DOCKER_CONTAINER_NAME) bash
 
 restart: stop run
 

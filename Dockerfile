@@ -13,16 +13,19 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     neovim
 
+# Create workspace and give ownership to ubuntu user
+RUN mkdir -p /workspace && chown ubuntu:ubuntu /workspace
+
+# Switch to ubuntu user for all user-space installs
+USER ubuntu
+SHELL ["/bin/bash", "--login", "-c"]
+ENV NVM_DIR="/home/ubuntu/.nvm"
 
 # Install node
-SHELL ["/bin/bash", "--login" , "-c"]
-ENV NVM_DIR="/usr/local/nvm"
-RUN mkdir $NVM_DIR
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash \
     && . "$NVM_DIR/nvm.sh" \
     && nvm install 24 \
     && node -v && npm -v
-
 
 # Install Claude Code.
 # It is required to run nvm.sh before npm, or npm will not be found.
