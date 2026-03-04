@@ -1,0 +1,35 @@
+{
+  "skipDangerousModePermissionPrompt": true,
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(go:*)",
+      "Write(*)",
+      "Bash(ls:*)",
+      "Bash(git commit:*)",
+      "Update(*:*)",
+      "Bash(mv:*)",
+      "Bash(echo:*)",
+      "Bash(sed:*)",
+      "Bash(source:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(pkill:*)",
+      "Bash(touch:*)",
+      "Bash(grep:*)",
+      "Bash(sqlite3:*)",
+      "Bash(curl:*)",
+      "Bash(rg:*)",
+      "Bash(chmod:*)",
+      "Bash(lsof:*)",
+      "Bash(make:*)",
+      "Bash(find:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Update(*)"
+    ],
+    "deny": []
+  }
+}

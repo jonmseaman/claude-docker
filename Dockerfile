@@ -28,8 +28,8 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | b
     && node -v && npm -v
 
 # Install Claude Code.
-# It is required to run nvm.sh before npm, or npm will not be found.
-RUN . "$NVM_DIR/nvm.sh" && npm install -g @anthropic-ai/claude-code
+RUN curl -fsSL https://claude.ai/install.sh | bash
+RUN echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 RUN echo 'alias clauded="claude --dangerously-skip-permissions"' >> ~/.bashrc
 
 # Set up working directory

@@ -10,6 +10,7 @@ run:
 	docker run -d \
 		--name $(DOCKER_CONTAINER_NAME) \
 		-v ~/Workspace:/home/ubuntu/Workspace \
+		-v $(PWD)/claude-config:/home/ubuntu/.claude \
 		-it \
 		$(DOCKER_IMAGE_NAME)
 	@echo "Container started. Use 'make shell' to access it"
