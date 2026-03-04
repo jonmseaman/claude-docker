@@ -13,9 +13,6 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     neovim
 
-# Create workspace and give ownership to ubuntu user
-RUN mkdir -p /workspace && chown ubuntu:ubuntu /workspace
-
 # Switch to ubuntu user for all user-space installs
 USER ubuntu
 SHELL ["/bin/bash", "--login", "-c"]

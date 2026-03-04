@@ -31,5 +31,12 @@
       "Update(*)"
     ],
     "deny": []
+  },
+  "trustedDirectories": [
+    "/home/ubuntu/Workspace"
+  ],
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); printf '%s:%s' \"$(whoami)\" \"$(echo \"$input\" | jq -r '.cwd')\""
   }
 }
