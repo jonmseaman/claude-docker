@@ -1,3 +1,5 @@
+# Private claude configs.
+.claude.json
 claude-config/.credentials.json
 
 # Mac .gitignore

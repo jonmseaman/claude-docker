@@ -7,10 +7,14 @@ build:
 	docker build -t $(DOCKER_IMAGE_NAME) .
 
 run:
+	# Without this, Docker apparently creates a directory when the file doesn't
+	# exist.
+	touch $(PWD)/.claude.json
 	docker run -d \
 		--name $(DOCKER_CONTAINER_NAME) \
 		-v ~/Workspace:/home/ubuntu/Workspace \
 		-v $(PWD)/claude-config:/home/ubuntu/.claude \
+		-v $(PWD)/.claude.json:/home/ubuntu/.claude.json \
 		-it \
 		$(DOCKER_IMAGE_NAME)
 	@echo "Container started. Use 'make shell' to access it"
