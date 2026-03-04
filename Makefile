@@ -30,5 +30,8 @@ logs:
 	docker logs -f $(DOCKER_CONTAINER_NAME)
 
 status:
+	# Command to fix context errors.
+	echo "Run `docker context use desktop-linux` to switch back to"
+	echo "docker desktop."
 	docker context show
 	@docker ps -a --filter name=$(DOCKER_CONTAINER_NAME)
